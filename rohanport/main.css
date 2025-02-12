@@ -1108,19 +1108,20 @@ header .logo {
 	margin-right: 50px;
 	margin-top: 25px;
 	position: relative;
+	
 }
 header .logo a {
-	display: block;
-	margin: 0;
-	padding: 0;
-	border: none;
-	font: 0/0 a;
-	text-shadow: none;
-	color: white;
-	width: 92px;
-	height: 15px;
-	background: url("../images/logo.png") no-repeat center;
-	background-size: 92px 15px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: 0/0 a;
+    text-shadow: none;
+    color: gray; /* Changed from white to gray */
+    width: 92px;
+    height: 15px;
+    background: url("../images/logo.png") no-repeat center;
+    background-size: 92px 15px;
 }
 
 /**
