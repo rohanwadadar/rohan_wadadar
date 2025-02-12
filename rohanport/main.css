@@ -1116,7 +1116,7 @@ header .logo a {
 	border: none;
 	font: 0/0 a;
 	text-shadow: none;
-	color: transparent;
+	color: white;
 	width: 92px;
 	height: 15px;
 	background: url("../images/logo.png") no-repeat center;
