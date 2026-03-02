@@ -143,8 +143,9 @@
     <!-- Floating Pill Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-8" id="navbar">
         <div class="max-w-7xl mx-auto glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-2xl transition-all border border-white/10">
-            <a href="#" class="text-2xl font-heading font-extrabold tracking-tighter text-white">
-                Rohan<span class="text-brand-gold">.</span>
+            <a href="#" class="text-2xl font-heading font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-brand-black" style="font-family: Arial, sans-serif;">R</div>
+                <span>Rohan<span class="text-brand-gold">.</span></span>
             </a>
             
             <!-- Desktop Menu -->
@@ -566,6 +567,16 @@
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeCV();
         });
+
+        // Security / Inspection Prevention Script
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) { return false; } // F12
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+        };
     </script>
 </body>
 </html>
