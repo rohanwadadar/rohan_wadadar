@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Wadadar | App Gallery</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            black: '#09090b', // Deep zinc black
+                            dark: '#18181b', // Zinc dark
+                            white: '#fafafa',
+                            gold: '#D4AF37',
+                            blue: '#3b82f6',
+                            purple: '#e11d48'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hover-lift:hover { transform: translateY(-8px); }
+    </style>
+</head>
+<body class="bg-brand-black text-brand-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-2xl">
+            <a href="index.html" class="text-2xl font-heading font-extrabold tracking-tighter text-white">
+                Rohan<span class="text-brand-gold">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center bg-transparent">
+                <a href="index.html#about" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="index.html#experience" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Experience</a>
+                <a href="index.html#projects" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Deployments</a>
+                <a href="lifestyle.html" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Lifestyle</a>
+                <a href="gallery.html" class="text-sm font-medium text-brand-gold transition-colors">App Gallery</a>
+                <a href="index.html#contact" class="px-5 py-2 rounded-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all text-sm font-semibold">Let's Talk</a>
+            </div>
+            
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 max-w-7xl mx-auto glass-nav rounded-2xl border-white/5 overflow-hidden" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="index.html#about" class="text-gray-300 hover:text-brand-gold font-medium">About</a>
+                <a href="index.html#experience" class="text-gray-300 hover:text-brand-gold font-medium">Experience</a>
+                <a href="index.html#projects" class="text-gray-300 hover:text-brand-gold font-medium">Deployments</a>
+                <a href="lifestyle.html" class="text-gray-300 hover:text-brand-gold font-medium">Lifestyle</a>
+                <a href="gallery.html" class="text-brand-gold font-medium">App Gallery</a>
+                <a href="index.html#contact" class="text-brand-blue font-semibold hover:text-white">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-40 pb-16 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-heading font-extrabold mb-4" data-aos="fade-up">Project <span class="text-brand-gold">Gallery</span></h1>
+        <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            A visual dive into previous web apps, personal projects, and experiments I've built along my journey.
+        </p>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="pb-32 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Items -->
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Cricket News">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1 block">Web App</span>
+                        <h3 class="text-xl font-bold text-white">Cricket News Web App</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/8.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Shoe Shop">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-blue mb-1 block">E-Commerce</span>
+                        <h3 class="text-xl font-bold text-white">Limited Cricket Shoes Shop</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/2.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Headphone Repair">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-purple mb-1 block">Business Page</span>
+                        <h3 class="text-xl font-bold text-white">Headphone Repairing Shop</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/3.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Portfolio">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-white mb-1 block">Personal</span>
+                        <h3 class="text-xl font-bold text-white">Portfolio Concept</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/7.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Before Pay">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1 block">FinTech Web Dev</span>
+                        <h3 class="text-xl font-bold text-white">Before Pay - Pay On Demand</h3>
+                        <p class="text-sm text-gray-400 mt-2 line-clamp-2">A pay advance service that lets working Australians access wages early.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/5.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="Hotel Reservation">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-blue mb-1 block">Full Stack</span>
+                        <h3 class="text-xl font-bold text-white">Hotel Reservation Website</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/rs (1).png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="RS Internship Sub">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-purple mb-1 block">Subscription Tool</span>
+                        <h3 class="text-xl font-bold text-white">RS Internship Subscription</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="aspect-square bg-brand-dark rounded-2xl overflow-hidden border border-white/5 relative shadow-xl">
+                    <img src="assets/images/rs1 (1).png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" alt="RS Internship">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 pt-16 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-white mb-1 block">Resource Platform</span>
+                        <h3 class="text-xl font-bold text-white">RS Internship Platform</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Unified Footer -->
+    <footer class="py-12 border-t border-white/5 bg-brand-dark text-center relative z-10 flex flex-col items-center">
+        <h2 class="text-2xl font-heading font-bold mb-4">Rohan<span class="text-brand-gold">.</span></h2>
+        <div class="text-gray-400 text-sm flex flex-col items-center space-y-2 mb-6 font-light tracking-wide">
+            <span>&copy; Copyright 2026</span>
+            <span>Design by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors">rohanstudio</a></span>
+            <span>Distributed by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors">rohanstudio</a></span>
+            <span>Email Powered by <a href="https://formspree.io/forms/mdknoznj/submissions" class="text-brand-blue hover:text-white transition-colors">formspree</a></span>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50 });
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    </script>
+</body>
+</html>

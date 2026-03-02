@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Wadadar | Lifestyle</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#09090b', // Deep professional zinc/black
+                            dark: '#18181b', // Zinc dark
+                            white: '#fafafa',
+                            gold: '#D4AF37',
+                            blue: '#3b82f6', // Professional crisp blue
+                            purple: '#e11d48', // Reddish Purple
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Professional Glassmorphism Pill */
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Box elements */
+        .glass-box {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #ffffff, #a1a1aa);
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4); /* Gold subtle hover glow */
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-black text-brand-white font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-black min-h-screen flex flex-col">
+
+    <!-- Subtle Abstract Grid Background lines -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-[-1]">
+        <!-- Very faint grid pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <!-- Sophisticated subtle upper glow -->
+        <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[50%] bg-brand-blue/10 rounded-full blur-[140px] animate-pulse-slow"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[40%] bg-brand-purple/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+    </div>
+
+    <!-- Floating Pill Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-8" id="navbar">
+        <div class="max-w-7xl mx-auto glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-2xl transition-all border border-white/10">
+            <a href="index.html" class="text-2xl font-heading font-extrabold tracking-tighter text-white">
+                Rohan<span class="text-brand-gold">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center bg-transparent">
+                <a href="index.html#about" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="index.html#experience" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Experience</a>
+                <a href="index.html#projects" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Deployments</a>
+                <a href="lifestyle.html" class="text-sm font-medium text-brand-gold transition-colors">Lifestyle</a>
+                <a href="gallery.html" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">App Gallery</a>
+                <a href="index.html#contact" class="px-5 py-2 rounded-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all text-sm font-semibold shadow-[0_0_15px_rgba(59,130,246,0.2)]">Let's Talk</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 max-w-7xl mx-auto glass-nav rounded-2xl border-white/5 overflow-hidden shadow-2xl" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="index.html#about" class="text-gray-300 hover:text-brand-gold font-medium">About</a>
+                <a href="index.html#experience" class="text-gray-300 hover:text-brand-gold font-medium">Experience</a>
+                <a href="index.html#projects" class="text-gray-300 hover:text-brand-gold font-medium">Deployments</a>
+                <a href="lifestyle.html" class="text-brand-gold font-medium">Lifestyle</a>
+                <a href="gallery.html" class="text-gray-300 hover:text-brand-gold font-medium">App Gallery</a>
+                <a href="index.html#contact" class="text-brand-blue font-semibold hover:text-white">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex-grow pt-24 mt-8 flex flex-col justify-center">
+        <!-- Lifestyle & Self Gallery Section -->
+        <section id="lifestyle" class="py-24 px-6 relative z-10 w-full">
+            <div class="container mx-auto max-w-7xl">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h5 class="text-brand-purple font-bold uppercase tracking-widest text-sm mb-2">Beyond Code</h5>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-white">Hobbies & Lifestyle</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto mt-4 font-light text-base md:text-lg">
+                        When I'm not crafting full-stack architectures, I am exploring the world as a cricketer, athlete, gym enthusiast, cook, and content creator.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    
+                    <!-- Photo Gallery Column -->
+                    <div class="flex flex-col justify-between gap-6" data-aos="fade-right">
+                        <div class="glass-box p-3 rounded-2xl border-white/10 group overflow-hidden relative w-full h-full min-h-[300px]">
+                            <img src="assets/images/hobby_cricket.png" alt="Cricket Stadium" class="absolute inset-0 w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-1 block">Sports & Fitness</span>
+                                <h4 class="text-white text-2xl font-bold tracking-wide">Cricketer & Athlete</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-box p-3 rounded-2xl border-white/10 group overflow-hidden relative w-full h-full min-h-[300px]">
+                            <img src="assets/images/hobby_cricket2.png" alt="Cafe Lifestyle" class="absolute inset-0 w-full h-full object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <span class="text-xs font-bold uppercase tracking-widest text-brand-purple mb-1 block">Content & Leisure</span>
+                                <h4 class="text-white text-2xl font-bold tracking-wide">Social Media Influencer</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Reels / Content Column -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6" data-aos="fade-left">
+                        <div class="glass-box p-3 rounded-2xl border-white/10 group overflow-hidden relative w-full h-full min-h-[300px]">
+                            <img src="assets/images/hobby_food.png" alt="Food Vlogging" class="absolute inset-0 w-full h-full object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <span class="text-xs font-bold uppercase tracking-widest text-[#f59e0b] mb-1 block">Culinary</span>
+                                <h4 class="text-white text-2xl font-bold tracking-wide">Food Vlogger</h4>
+                                <a href="https://www.instagram.com/bitesizedadventurefood?igsh=MTZ4ejVhMmwzYWFiYw%3D%3D&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnvo3PvR6gV8k2-E5opXKZLjNQGB723DEsspIkA1vc_Gpu4fEFdarhSDMi8hA_aem_qDJP20DrVel7hJvYy8Ne7Q" target="_blank" class="inline-flex items-center gap-2 mt-3 text-sm text-brand-white hover:text-[#f59e0b] transition-colors">
+                                    View Channel
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="glass-box p-3 rounded-2xl border-white/10 group overflow-hidden relative w-full h-full min-h-[300px]">
+                            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-300 pb-0">
+                                <source src="assets/images/get.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <span class="text-xs font-bold uppercase tracking-widest text-brand-blue mb-1 block">Fitness</span>
+                                <h4 class="text-white text-2xl font-bold tracking-wide">Gym Lifestyle</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Unified Footer Matches index.html perfectly -->
+    <footer class="py-12 bg-[#121212] border-t border-[rgba(255,255,255,0.05)] text-center relative z-20 w-full mt-auto">
+        <div class="flex flex-col items-center">
+            <h2 class="text-2xl font-heading font-extrabold tracking-tighter text-white mb-6 mb-8 opacity-80 backdrop-blur-sm">Rohan<span class="text-brand-gold">.</span></h2>
+            
+            <div class="text-gray-400 text-[15px] flex flex-col items-center space-y-3 font-light tracking-wide max-w-sm mx-auto">
+                <span class="block">&copy; Copyright 2023 </span>
+                <span class="block">Design by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
+                <span class="block">Distributed by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
+                <span class="block">Email Powered by <a href="https://formspree.io/forms/mdknoznj/submissions" class="text-white hover:text-brand-blue transition-colors pb-1 border-b border-brand-blue">formspree</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize animations smoothly
+        AOS.init({ once: true, offset: 50, duration: 800 });
+
+        // Glass Navbar Scroll behavior
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Keep pill design but tighten it
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+                navbar.firstElementChild.classList.add('bg-[rgba(0,0,0,0.8)]', 'border-white/20');
+            } else {
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+                navbar.firstElementChild.classList.remove('bg-[rgba(0,0,0,0.8)]', 'border-white/20');
+            }
+        });
+
+        // Mobile Menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

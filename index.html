@@ -1,848 +1,554 @@
 <!DOCTYPE html>
-<!-- saved from url=(0025)https://shakiz.github.io/ -->
-<html class=" js " lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en" class="scroll-smooth">
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evSX huddledayAHTa4wYo2BQDbijEXCg4kbZizX0jTUoi4wz4jP3j8ylGUSNqznB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Wadadar | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#09090b', // Deep professional zinc/black
+                            dark: '#18181b', // Zinc dark
+                            white: '#fafafa',
+                            gold: '#D4AF37',
+                            blue: '#3b82f6', // Professional crisp blue
+                            purple: '#e11d48', // Reddish Purple
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Professional Glassmorphism Pill */
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Box elements */
+        .glass-box {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #ffffff, #a1a1aa);
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4); /* Gold subtle hover glow */
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .animated-bg-line {
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+        }
+    </style>
 </head>
 
-   <!--- basic page needs
-   ================================================== -->
-   
-	<title>Rohan Wadadar - Portfolio</title>
-	<meta name="description" content="">  
-	<meta name="author" content="">
+<body class="bg-brand-black text-brand-white font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-black">
 
-   <!-- mobile specific metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Subtle Abstract Grid Background lines instead of neon blobs -->
+    <div class="fixed inset-0 w-full h-full pointer-events-none z-[-1]">
+        <!-- Very faint grid pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <!-- Sophisticated subtle upper glow -->
+        <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[50%] bg-brand-blue/10 rounded-full blur-[140px] animate-pulse-slow"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[40%] bg-brand-purple/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+    </div>
 
- 	<!-- CSS
-   ================================================== -->
-   <link rel="stylesheet" href="./rohanport/base.css">  
-   <link rel="stylesheet" href="./rohanport/main.css">
-   <link rel="stylesheet" href="./rohanport/vendor.css">     
+    <!-- CV Modal -->
+    <div id="cv-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-md p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-box rounded-2xl p-6 flex flex-col items-center overflow-y-auto transform scale-95 transition-transform duration-300" id="cv-modal-content">
+            <button onclick="closeCV()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors bg-brand-dark rounded-full p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <h3 class="font-heading text-2xl font-bold mb-6 text-white tracking-widest uppercase">Curriculum Vitae</h3>
+            
+            <div class="w-full bg-white rounded-lg p-2 mb-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                <img src="assets/images/resume_preview.jpg" alt="Resume Preview" class="w-full h-auto rounded">
+            </div>
+            
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="assets/docs/resume.pdf" download class="px-8 py-3 bg-white text-black hover:bg-gray-200 rounded-full font-semibold tracking-wide transition-all hover-lift flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download PDF
+                </a>
+                <a href="assets/images/resume_preview.jpg" download class="px-8 py-3 bg-transparent border border-white/20 hover:border-white text-white rounded-full font-semibold tracking-wide transition-all hover-lift flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download Image
+                </a>
+            </div>
+        </div>
+    </div>
 
-   <!-- script
-   ================================================== -->   
-	<script src="./rohanport/modernizr.js.download"></script>
-	<script src="./rohanport/pace.min.js.download"></script>
+    <!-- Floating Pill Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-8" id="navbar">
+        <div class="max-w-7xl mx-auto glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-2xl transition-all border border-white/10">
+            <a href="#" class="text-2xl font-heading font-extrabold tracking-tighter text-white">
+                Rohan<span class="text-brand-gold">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center bg-transparent">
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Experience</a>
+                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Deployments</a>
+                <a href="lifestyle.html" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Lifestyle</a>
+                <a href="gallery.html" class="text-sm font-medium text-brand-gold flex items-center gap-1 transition-colors hover:text-white">
+                    App Gallery
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="#contact" class="px-5 py-2 rounded-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all text-sm font-semibold shadow-[0_0_15px_rgba(59,130,246,0.2)]">Let's Talk</a>
+            </div>
 
-   <!-- favicons
-	================================================== -->
-	<link rel="icon" type="image/png" href="https://rohanwadadar.github.io/portfolio/">
-
-	<!-- Google tag (gtag.js) -->
-	<script async="" src="./rohanport/js"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'G-JNXBMHBRCS');
-	</script>
-
-<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
-
-<body id="top" class="  pace-done"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-  <div class="pace-progress-inner"></div>
-</div>
-<div class="pace-activity"></div></div>
-
-	<!-- header 
-   ================================================== -->
-   <header>   	
-   	<div class="row">
-
-   		<div class="top-bar">
-			
-   			<a class="menu-toggle" href="#"><span>Menu</span></a>
-
-	   		<div class="logo">
-		        <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/thumbnails/008/533/663/small_2x/r-paint-brush-letter-logo-design-with-artistic-brush-stroke-in-black-and-purple-colors-vector.jpg">
-
-		        <a href="https://www.linkedin.com/in/rohan-wadadar-98439934a/" style="color: white;">Rohan</a>
-
-		      </div>		      
-
-		   	<nav id="main-nav-wrap">
-					<ul class="main-navigation">
-						<li class="current"><a class="smoothscroll" href="/#intro" title="">Home</a></li>
-						<li><a class="smoothscroll" href="#about" title="">About</a></li>
-						<li><a class="smoothscroll" href="#resume" title="">Resume</a></li>
-						<li><a class="smoothscroll" href="#portfolio" title="">Portfolio</a></li>
-						<li><a class="smoothscroll" href="#contact" title="">Contact</a></li>	
-					</ul>
-				</nav>    		
-   		</div> <!-- /top-bar --> 
-   		
-   	</div> <!-- /row --> 		
-   </header> <!-- /header -->
-
-	<!-- intro section
-   ================================================== -->
-   <section id="intro">   
-
-   	<div class="intro-overlay"></div>	
-
-   	<div class="intro-content">
-   		<div class="row">
-
-   			<div class="col-twelve">
-
-				<h5>Hello, World.</h5>
-				<h1>I'm Rohan Wadadar.</h1>
-
-				<p class="intro-position">
-					<span>Software Engineer</span>
-					<span>Full Stack Web Developer</span> 
-				</p>
-
-	   			<a class="button stroke smoothscroll" href="https://shakiz.github.io/#about" title="">More About Me</a>
-
-	   		</div>  
-   			
-   		</div>   		 		
-   	</div> <!-- /intro-content --> 
-
-   	<ul class="intro-social">        
-         <li><a href="https://www.linkedin.com/in/sakhawat-hossain-762688127/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-         <li><a href="https://github.com/shakiz" target="_blank"><i class="fa fa-github"></i></a></li>
-         <li><a href="https://stackoverflow.com/users/10603313/sakhawat-hossain" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
-      </ul> <!-- /intro-social -->      	
-
-   </section> <!-- /intro -->
-
-
-   <!-- about section
-   ================================================== -->
-   <section id="about">  
-
-   	<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>About</h5>
-   			<h1>Let me introduce myself.</h1>
-
-   			<div class="intro-info">
-				<img src="./rohanport/AbwevLVY4ZSUAAAAAElFTkSuQmCC.png" alt="Profile Picture" class="clickable">
-		
-			<div id="overlay" class="overlay">
-				<img src="" alt="Full Screen Image" id="fullscreenImg">
-			</div>
-			</div>
-
-<p class="lead">Aspiring Full Stack Web Developer with a strong foundation in web development principles and a passion for learning. Eager to contribute to team discussions and collaborate on successful project deliveries. Known for problem-solving skills and a keen focus on improving user experiences. Committed to enhancing proficiencies through continuous learning, adapting to new technologies, and embracing code review practices.</p>
-   			</div>   			
-
-   		</div>   		
-   	</div> <!-- /section-intro -->
-<script>document.querySelectorAll('.clickable').forEach(img => {
-    img.addEventListener('click', function() {
-        const overlay = document.getElementById('overlay');
-        const fullscreenImg = document.getElementById('fullscreenImg');
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
         
-        fullscreenImg.src = this.src; // Set the source of the fullscreen image
-        overlay.style.display = 'flex'; // Show the overlay
-    });
-});
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4 max-w-7xl mx-auto glass-nav rounded-2xl border-white/5 overflow-hidden shadow-2xl" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#about" class="text-gray-300 hover:text-brand-gold font-medium">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-brand-gold font-medium">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-brand-gold font-medium">Deployments</a>
+                <a href="lifestyle.html" class="text-gray-300 hover:text-brand-gold font-medium">Lifestyle</a>
+                <a href="gallery.html" class="text-brand-gold font-medium">App Gallery</a>
+                <a href="#contact" class="text-brand-blue font-semibold hover:text-white">Contact Me</a>
+            </div>
+        </div>
+    </nav>
 
-document.getElementById('overlay').addEventListener('click', function() {
-    this.style.display = 'none'; // Hide the overlay when clicked
-});
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 px-6">
+        <div class="container mx-auto flex flex-col items-center text-center z-10" data-aos="fade-up" data-aos-duration="1000">
+            <p class="text-brand-gold uppercase tracking-[0.3em] text-xs md:text-sm font-semibold mb-6 flex items-center gap-3">
+                <span class="w-10 h-[1px] bg-brand-gold hidden sm:block"></span>
+                Software Engineer
+                <span class="w-10 h-[1px] bg-brand-gold hidden sm:block"></span>
+            </p>
+            <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-heading font-extrabold leading-tight mb-6">
+                <span class="text-gradient">Rohan Wadadar</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mb-12">
+                Crafting robust backend architectures and minimalist frontend experiences. Specialized in <span class="text-white font-medium">Flask, React, and Microservices</span>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5">
+                <a href="#projects" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all hover-lift min-w-[180px]">View Work</a>
+                <button onclick="openCV()" class="px-8 py-4 glass-box border border-white/20 text-white font-bold rounded-full hover:border-brand-gold hover:text-brand-gold transition-all hover-lift flex items-center justify-center gap-3 min-w-[180px]">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    Resume
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-500 hover:text-white transition-colors flex flex-col items-center">
+                <span class="text-xs uppercase tracking-widest mb-2 opacity-50">Scroll</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+    </section>
 
-</script>
-   	<div class="row about-content">
+    <!-- Sub-hero Separator -->
+    <div class="w-full h-[1px] animated-bg-line my-10 hidden md:block"></div>
 
-   		<div class="col-six tab-full">
-
-   			<h3>Profile</h3>
-<!--    			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p> -->
-
-   			<ul class="info-list">
-   				<li>
-					<strong>Fullname:</strong>
-					<span>Rohan Wadadar</span>
-				</li>
-				<li>
-					<strong>Birth Date:</strong>
-					<span>November 7th, 2003</span>
-				</li>
-				<li>
-					<strong>Current Position:</strong>
-					<span>------</span>
-				</li>
-				<li>
-					<strong>Website:</strong>
-					<span><a href="https://rohanwadadar.github.io/">https://rohanwadadar.github.io/</a></span>
-				</li>
-				<li>
-					<strong>Email:</strong>
-					<span>rwadadar@gmail.com</span>
-				</li>
-				<li>
-					<strong>linkdin:</strong>
-					<span>@Rohawadadar</span>
-				</li>
-
-   			</ul> <!-- /info-list -->
-
-   		</div>
-
-   
-
-			<div class="col-six tab-full">
-
-  			<h3>Skills</h3>
-
-			  <ul class="skill-bars">
-				<li>
-					<div class="progress percent90"><span></span></div>
-					<strong>JavaScript</strong>
-				</li>
-				<li>
-					<div class="progress percent75"><span></span></div>
-					<strong>React</strong>
-				</li>
-				<li>
-					<div class="progress percent80"><span></span></div>
-					<strong>MySQL</strong>
-				</li>
-				<li>
-					<div class="progress percent95"><span></span></div>
-					<strong>PHP</strong>
-				</li>
-				<li>
-					<div class="progress percent83"><span></span></div>
-					<strong>HTML/CSS</strong>
-				</li>
-			 </ul> <!-- /skill-bars -->		
-
-		</div>
-
-  	</div> 
-
-		</div>
-
-   	</div>
-
-   	<div class="row button-section">
-		<div class="col-twelve">
-			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a><a href="https://github.com/rohanwadadar/portfolio/blob/4f76c51179d8b6f59648e6d883c51aec338a4cc0/RESUMEORIGINALMCA.pdf" target="_blank" title="Download CV" class="button button-primary">Download CV</a>
-
-
-
-		</div>
-		
-   	</div>
-
-   </section> <!-- /process-->    
-
-<!-- Resume Section
-================================================== -->
-<section id="resume" class="grey-section">
-
-    <div class="row section-intro">
-        <div class="col-twelve">
-            <h5>Resume</h5>
-            <h1>More of my credentials.</h1>
-        </div>   
-    </div> <!-- /section-intro--> 
-
-    <div class="row resume-timeline">
-
-        <div class="col-twelve resume-header">
-            <h2>Work Experience</h2>
-        </div> <!-- /resume-header -->
-
-        <div class="col-twelve">
-            <div class="timeline-wrap">
-
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-briefcase"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>Front-End Flutter Developer</h3>
-                        <p>Present</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h4>Trading App Startup</h4>
-                        <p>Currently working as a front-end Flutter developer, building a real-time trading app from scratch for a startup.</p>
-                        <h3>Key Responsibilities:</h3>
-                        <ul>
-                            <li>Developing a fully functional trading app using Flutter and Dart.</li>
-                            <li>Implementing real-time data processing for stock price updates.</li>
-                            <li>Ensuring a seamless and user-friendly mobile experience.</li>
-                            <li>Collaborating with back-end developers to integrate APIs.</li>
-                            <li>Optimizing performance for better speed and efficiency.</li>
+    <!-- About & Skills Section -->
+    <section id="about" class="py-24 px-6 relative">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-8">Engineering <br/><span class="text-brand-gold italic font-light">Elegance</span>.</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-4 font-light">
+                        Aspiring Full Stack Web Developer with a strong foundation in web development principles and a passion for learning. Eager to contribute to team discussions and collaborate on successful project deliveries. Known for problem-solving skills and a keen focus on improving user experiences.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6 font-light">
+                        Committed to enhancing proficiencies through continuous learning, adapting to new technologies, and embracing code review practices. Beyond coding, I am an active cricketer, athlete, gym enthusiast, enjoy cooking, and creating content as a social media influencer.
+                    </p>
+                    <div class="glass-box p-8 rounded-2xl border-white/5 mt-8">
+                        <ul class="space-y-5">
+                            <li class="flex items-center text-gray-300">
+                                <span class="w-8 border-b border-brand-purple mr-4"></span>
+                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">Email</span> 
+                                <span class="font-light">rwadadar@gmail.com</span>
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="w-8 border-b border-brand-blue mr-4"></span>
+                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">LinkedIn</span> 
+                                <span class="font-light">@Rohawadadar</span>
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <span class="w-8 border-b border-brand-gold mr-4"></span>
+                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">Location</span> 
+                                <span class="font-light">India</span>
+                            </li>
                         </ul>
                     </div>
-                </div> <!-- /timeline-block -->
+                </div>
 
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-briefcase"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>Freelance Web Developer</h3>
-                        <p>2023 - Present</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <p>Worked on various web development projects, including e-commerce websites, portfolio websites, and business landing pages.</p>
-                        <h3>Key Responsibilities:</h3>
-                        <ul>
-                            <li>Built a personal portfolio website showcasing skills and projects.</li>
-                            <li>Developed e-commerce business websites with payment integrations.</li>
-                            <li>Created responsive and dynamic websites using React, PHP, and MySQL.</li>
-                            <li>Optimized website performance for better user experience.</li>
-                        </ul>
-                    </div>
-                </div> <!-- /timeline-block -->
-
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-briefcase"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>UI/UX Developer</h3>
-                        <p>2022 - 2023</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <p>Worked on multiple projects as part of a team, focusing on designing and developing user-friendly interfaces.</p>
-                        <h3>Key Responsibilities:</h3>
-                        <ul>
-                            <li>Designed UI/UX for websites and mobile apps.</li>
-                            <li>Collaborated with developers to bring designs to life.</li>
-                            <li>Ensured cross-device compatibility and responsiveness.</li>
-                            <li>Conducted usability testing and improved UI based on feedback.</li>
-                        </ul>
-                    </div>
-                </div> <!-- /timeline-block -->
-
-            </div> <!-- /timeline-wrap -->            
-        </div> <!-- /col-twelve -->
-    </div> <!-- /resume-timeline -->
-
-    <div class="row resume-timeline">
-        <div class="col-twelve resume-header">
-            <h2>Education</h2>
-        </div> <!-- /resume-header -->
-
-        <div class="col-twelve">
-            <div class="timeline-wrap">
-
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>Master of Computer Applications (MCA)</h3>
-                        <p>2024 - 2026</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h4>RCC Institute of Information Technology</h4>
-                        <p>Pursuing a Master's degree with a focus on advanced web technologies, mobile app development, and AI tools.</p>
-                    </div>
-                </div> <!-- /timeline-block -->
-
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>Bachelor of Science in Software Science</h3>
-                        <p>2021 - 2024</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h4>Vidyasagar College</h4>
-                        <p>Completed a comprehensive program in software science with a specialization in web development and mobile applications.</p>
-                        <h3>Major Achievements:</h3>
-                        <ul>
-                            <li>Best Web Application Project Award</li>
-                            <li>Won a coding competition</li>
-                            <li>Graduated with honors</li>
-                        </ul>
-                    </div>
-                </div> <!-- /timeline-block -->
-
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>Higher Secondary (ISC)</h3>
-                        <p>2019 - 2021</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h4>RBEC School</h4>
-                        <p>Completed ISC with a focus on Science and Computer Studies.</p>
-                    </div>
-                </div> <!-- /timeline-block -->
-
-                <div class="timeline-block">
-                    <div class="timeline-ico">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-
-                    <div class="timeline-header">
-                        <h3>Secondary Education (ICSE)</h3>
-                        <p>2017 - 2019</p>
-                    </div>
-
-                    <div class="timeline-content">
-                        <h4>RBEC School</h4>
-                        <p>Completed ICSE with a strong foundation in Mathematics, Science, and Computer Applications.</p>
-                    </div>
-                </div> <!-- /timeline-block -->
-
-            </div> <!-- /timeline-wrap -->            
-        </div> <!-- /col-twelve -->
-    </div> <!-- /resume-timeline -->
-</section> <!-- /resume -->
-
-	<!-- Portfolio Section
-   ================================================== -->
-	<section id="portfolio">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Portfolio</h5>
-   			<h1>Check Out Some of My Works.</h1>
-
-   			<p class="lead">Get a good idea about the projects that I have been working on/worked for. You can find all kinda projects here including my per projects and others.</p>
-
-   		</div>   		
-   	</div> <!-- /section-intro--> 
-
-   	<div class="row portfolio-content">
-
-   		<div class="col-twelve">
-
-   			<!-- portfolio-wrapper -->
-	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack" style="position: relative; height: 2645.55px;">
-
-	         	<div class="bgrid folio-item" style="position: absolute; left: 0px; top: 0px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/1.png" alt="Liberty">
-	                  <a href="https://shakiz.github.io/#modal-01" class="overlay">	                  	           
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title">Cricket News web app</h3>	     					    
-		     					    	 <span class="folio-types">
-											web development
-		     					       </span>
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>	               
-	        		</div> <!-- /folio-item -->
-
-					<div class="bgrid folio-item" style="position: absolute; left: 0px; top: 0px;">
-						<div class="item-wrap">
-							<img src="./rohanport/8.png" alt="Liberty">
-						   <a href="https://shakiz.github.io/#modal-01" class="overlay">	                  	           
-							  <div class="folio-item-table">
-								  <div class="folio-item-cell">
-											 <h3 class="folio-title">Limited Cricket Shoes Shop</h3>	     					    
-											   <span class="folio-types">
-												web development
-											 </span>
-										 </div>	                      	
-							  </div>                    
-						   </a>
-						</div>	               
-						 </div> <!-- /folio-item -->
-	        		<div class="bgrid folio-item" style="position: absolute; left: 550px; top: 0px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/2.png" alt="Shutterbug">
-	               	<a href="https://shakiz.github.io/#modal-02" class="overlay">              		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Headphone Repairing shop</h3>	     					    
-		     					    	<span class="folio-types">
-											web development
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	        		<div class="bgrid folio-item" style="position: absolute; left: 0px; top: 977px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/3.png" alt="Lighthouse">
-	                  <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Portfolio</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  web development
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 977px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/4.png" alt="Salad">
-	                  <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Personal Information </h3>	     					    
-		     					    	<span class="folio-types">
-											web development
-		     					      </span>		     		
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->   
-
-	            <div class="bgrid folio-item" style="position: absolute; left: 0px; top: 1527px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/7.png" alt="Clouds">
-	                  <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">CV downloader</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	web development
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
-
-	            <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/5.png" alt="Beetle">
-	                  <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Hotel Reservation Website</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	web development
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->     
-
-			       <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/rs1 (1).png" alt="Beetle">
-	                  <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">RS Internship </h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	web development
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> 
-			       <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-	               <div class="item-wrap">
-	               	<img src="./rohanport/rs (1).png" alt="Beetle">
-	                  <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">RS Internship Subscription</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	web development
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> 
-
-
-
-                    <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-                        <div class="item-wrap">
-                            <img src="cvmaker.png" alt="Beetle">
-                           <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-                              <div class="folio-item-table">
-                                  <div class="folio-item-cell">
-                                      <h3 class="folio-title">CV Generator</h3>	     					    
-                                              <span class="folio-types">
-                                                 web development
-                                            </span>		     		
-                                         </div>  	                      	
-                              </div>                    
-                           </a>
-                        </div>
-                         </div> 
-                         <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-                            <div class="item-wrap">
-                                <img src="certificate.png" alt="Beetle">
-                               <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-                                  <div class="folio-item-table">
-                                      <div class="folio-item-cell">
-                                          <h3 class="folio-title">Certificate Generator</h3>	     					    
-                                                  <span class="folio-types">
-                                                     web development
-                                                </span>		     		
-                                             </div>  	                      	
-                                  </div>                    
-                               </a>
+                <div data-aos="fade-left" class="bg-brand-dark/50 p-8 rounded-3xl border border-white/5">
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-white uppercase tracking-widest text-center">Core Tech Stack</h3>
+                    <div class="space-y-6">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">Java & Spring Boot</span>
+                                <span class="text-sm font-bold text-white">90%</span>
                             </div>
-                             </div> 
-                             <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-                                <div class="item-wrap">
-                                    <img src="gen.png" alt="Beetle">
-                                   <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-                                      <div class="folio-item-table">
-                                          <div class="folio-item-cell">
-                                              <h3 class="folio-title">Generating WEB App</h3>	     					    
-                                                      <span class="folio-types">
-                                                         web development
-                                                    </span>		     		
-                                                 </div>  	                      	
-                                      </div>                    
-                                   </a>
-                                </div>
-                                 </div> 
-                                 <div class="bgrid folio-item" style="position: absolute; left: 550px; top: 1667px;">
-                                    <div class="item-wrap">
-                                        <img src="map.png" alt="Beetle">
-                                       <a href="https://rohanwadadar.github.io/portfolio/" class="overlay">                  	                 
-                                          <div class="folio-item-table">
-                                              <div class="folio-item-cell">
-                                                  <h3 class="folio-title">ArcGISmap Web app</h3>	     					    
-                                                          <span class="folio-types">
-                                                             web development
-                                                        </span>		     		
-                                                     </div>  	                      	
-                                          </div>                    
-                                       </a>
-                                    </div>
-                                     </div> 
+                            <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-brand-gold h-1.5 rounded-full relative" style="width: 90%"><div class="absolute inset-0 bg-white/20"></div></div>
+                            </div>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">React & JavaScript</span>
+                                <span class="text-sm font-bold text-white">85%</span>
+                            </div>
+                            <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-brand-blue h-1.5 rounded-full relative" style="width: 85%"><div class="absolute inset-0 bg-white/20"></div></div>
+                            </div>
+                        </div>
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">MySQL / PHP</span>
+                                <span class="text-sm font-bold text-white">80%</span>
+                            </div>
+                            <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-brand-purple h-1.5 rounded-full relative" style="width: 80%"><div class="absolute inset-0 bg-white/20"></div></div>
+                            </div>
+                        </div>
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">HTML / CSS / UI/UX</span>
+                                <span class="text-sm font-bold text-white">85%</span>
+                            </div>
+                            <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-white h-1.5 rounded-full opacity-80" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 5 -->
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">Flutter / Git / AWS</span>
+                                <span class="text-sm font-bold text-white">75%</span>
+                            </div>
+                            <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-gray-500 h-1.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-	            <!-- modal popups - begin
-	            ============================================================= -->
-	            <div id="modal-01" class="popup-modal slider mfp-hide">	
+            </div>
+        </div>
+    </section>
 
-				     	<div class="media">
-				     		<img src="./rohanport/7.png" alt="">
-				     	</div>      	
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 px-6 relative bg-brand-dark/30 border-y border-white/5">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h5 class="text-brand-purple font-bold uppercase tracking-widest text-sm mb-2">Chronology</h5>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-white">Professional Path</h2>
+            </div>
 
-					   <div class="description-box">
-					      <h4>Before Pay</h4>		      
-					      <p>Before Pay - Pay On Demand™ - a pay advance service that lets working Australians take back control of their finances and access a portion of their wages for just a 5% fixed fee.</p>
+            <div class="relative border-l border-white/10 ml-3 md:ml-6 space-y-12 pb-8">
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 md:pl-0 group" data-aos="fade-up">
+                    <div class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-gold rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-gold">
+                        <div class="w-2 h-2 bg-brand-gold rounded-full group-hover:bg-black transition-colors"></div>
+                    </div>
+                    <div class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all hover:-translate-y-1 shadow-lg">
+                        <span class="inline-block text-brand-gold text-sm font-bold tracking-wider mb-2">2025 - Present</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Software Engineering Apprentice</h3>
+                        <h4 class="text-lg text-gray-300 mb-4 font-heading font-medium">SETU Business School</h4>
+                        <p class="text-gray-400 font-light leading-relaxed">
+                            Crafting backend infrastructure and highly reliant APIs serving extensive data structures using <span class="text-white font-medium">Flask, React, and Microservices</span>. Operating within Agile paradigms.
+                        </p>
+                    </div>
+                </div>
 
-					      <div class="categories">web development</div>			               
-					   </div>
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 md:pl-0 group" data-aos="fade-up">
+                    <div class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-blue rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-blue">
+                        <div class="w-2 h-2 bg-brand-blue rounded-full group-hover:bg-black transition-colors"></div>
+                    </div>
+                    <div class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-blue/30 transition-all hover:-translate-y-1 shadow-lg">
+                        <span class="inline-block text-brand-blue text-sm font-bold tracking-wider mb-2">2024 - 2025</span>
+                        <h3 class="text-2xl font-bold text-white mb-2">Front-End Flutter Developer</h3>
+                        <h4 class="text-lg text-gray-300 mb-4 font-heading font-medium">Trading App Startup</h4>
+                        <p class="text-gray-400 font-light leading-relaxed">
+                            Designed the foundational UI/UX of a fast-paced live stock trading application utilizing Flutter. Connected real-time WebSocket streams for instantaneous market feedback.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 (Education) -->
+                <div class="relative pl-8 md:pl-0 group" data-aos="fade-up">
+                    <div class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-purple rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-purple">
+                        <div class="w-2 h-2 bg-brand-purple rounded-full group-hover:bg-black transition-colors"></div>
+                    </div>
+                    <div class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-purple/30 transition-all hover:-translate-y-1 shadow-lg">
+                        <span class="inline-block text-brand-purple text-sm font-bold tracking-wider mb-4 uppercase">Education</span>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-1">Master of Computer Applications</h3>
+                                <p class="text-gray-400 text-sm">RCC Institute of Information Technology &bull; 2024 - 2026</p>
+                            </div>
+                            <div class="pt-4 border-t border-white/5">
+                                <h3 class="text-xl font-bold text-white mb-1">B.Sc. Computer Science</h3>
+                                <p class="text-gray-400 text-sm">Vidyasagar College, University of Calcutta &bull; 2021 - 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-			         <div class="link-box">
-			            <a href="https://www.beforepay.com.au/" target="_blank">Details</a>
-					      <a href="https://rohanwadadar.github.io/portfolio/" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+            </div>
+        </div>
+    </section>
 
-				   </div> <!-- /modal-01 -->
+    <!-- Deployments Showcase Section -->
+    <section id="projects" class="py-24 px-6 relative z-10">
+        <div class="container mx-auto max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-in">
+                <div>
+                    <h5 class="text-brand-blue font-bold uppercase tracking-widest text-sm mb-2">The Work</h5>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-white">Recent Deployments</h2>
+                </div>
+                <div class="mt-6 md:mt-0 text-right">
+                    <p class="text-gray-400 max-w-sm mb-4 font-light text-sm md:text-base">
+                        A curation of highly specific frontend structures, client websites, and web applications.
+                    </p>
+                    <a href="gallery.html" class="inline-flex items-center gap-2 text-brand-gold hover:text-white font-semibold transition-colors uppercase tracking-wider text-sm border-b border-brand-gold pb-1">
+                        View Full App Gallery
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
 
+            <!-- Professional 2 Column Large Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                
+                <!-- Project 1 -->
+                <a href="https://ravipublishers.rahulbablu.in/" target="_blank" class="block group hover-lift" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Ravi Publishers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-gold/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors">Ravi Publishers</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </div>
+                        <p class="text-gray-400 font-light text-lg">Freelance Client - Scalable publication storefront</p>
+                    </div>
+                </a>
 
-				 
+                <!-- Project 2 -->
+                <a href="https://tamal-basu.vercel.app/" target="_blank" class="block group hover-lift md:translate-y-16" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Dr. Tamal Basu Portfolio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-blue/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-brand-blue transition-colors">Dr. Tamal Basu</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-blue transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </div>
+                        <p class="text-gray-400 font-light text-lg">Polished academic landing page & animations</p>
+                    </div>
+                </a>
+                
+                <!-- Project 3 -->
+                <a href="https://rohanwadadar.github.io/invoice_generator/" target="_blank" class="block group hover-lift" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Invoice Gen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-purple/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-brand-purple transition-colors">InstaInvoice API</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-purple transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </div>
+                        <p class="text-gray-400 font-light text-lg">React-based high fidelity PDF tooling</p>
+                    </div>
+                </a>
 
-				   <!-- modal popups - end
-	            ============================================================= -->
+                <!-- Project 4 -->
+                <a href="https://shoes-6chjqk1ps-rohanwadadars-projects.vercel.app/" target="_blank" class="block group hover-lift md:translate-y-16" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Shoes App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-white/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-white transition-colors">Shoe Shop UI/UX</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </div>
+                        <p class="text-gray-400 font-light text-lg">Modern frontend mapping shopping flows</p>
+                    </div>
+                </a>
 
-	         </div> <!-- /portfolio-wrapper --> 
-
-   		</div>  <!-- /twelve -->   
-
-   	</div> <!-- /portfolio-content --> 
-		
-	</section> <!-- /portfolio --> 
-	
-		
-	</section> <!-- /portfolio --> 
-	
-   <!-- contact   ================================================== -->
-	<section id="contact">
-
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
-
-   			<p class="lead">In case of any queries you can send your queries by following the below details!</p>
-
-   		</div> 
-   	</div> <!-- /section-intro -->
-	
-   	<div class="row contact-form">
-
-   		<div class="col-twelve">
-
-      <!-- Complex form with additional fields -->
-	  <form action="https://formspree.io/f/mdknoznj" method="POST">
-		<label>
-			Your name:
-			<input type="text" name="name">
-		</label>
-		<label>
-			Your email:
-			<input type="email" name="email">
-		</label>
-		<label>
-			Description:
-			<textarea name="description"></textarea>
-		</label>
-		<button type="submit" class="submitform">Submit</button>
-	</form>
-
-
-
-            <!-- contact-warning -->
-            <div id="message-warning">            	
-            </div>            
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
-
-         </div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /contact-form 
-	   <script>
-		document.getElementById('contactForm').addEventListener('submit', function(event) {
-			event.preventDefault(); // Prevent the default form submission
-		
-			// Get form data
-			const contactName = document.getElementById('contactName').value;
-			const contactEmail = document.getElementById('contactEmail').value;
-			const contactSubject = document.getElementById('contactSubject').value;
-			const contactMessage = document.getElementById('contactMessage').value;
-		
-			// Create a URL-encoded string from the form data
-			const formData = new URLSearchParams({
-				contactName: contactName,
-				contactEmail: contactEmail,
-				contactSubject: contactSubject,
-				contactMessage: contactMessage
-			}).toString();
-		
-			// Redirect to post.html with the form data
-			window.location.href = 'post.html?' + formData;
-		});
-		</script>
-	-->
-   	<div class="row contact-info">
-
-   		<div class="col-six tab-full collapse">
-
-   			<div class="icon">
-   				<i class="icon-mail"></i>
-   			</div>
-
-   			<h5>Email Me At</h5>
-
-   			<p>rwadadar@gamil.com<br></p>
-
-   		</div>
-
-   		<div class="col-six tab-full">
-
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
-
-   			<h5>Contact with me at Mobile/What's App At</h5>
-
-   			<p>Phone/Mobile: (+91) 7595921010<br></p>
-
-   		</div>
-   		
-   	</div> <!-- /contact-info -->
-		
-	</section> <!-- /contact -->
+            </div>
+        </div>
+    </section>
 
 
-   <!-- footer
-   ================================================== -->
 
-   <footer>
-     	<div class="row">
 
-     		<div class="col-six tab-full pull-right social">
+    <!-- Professional Contact API Block -->
+    <section id="contact" class="py-24 px-6 relative mt-16 lg:mt-32">
+        <div class="absolute inset-0 bg-brand-dark border-t border-white/5 transform skew-y-[-2deg] origin-bottom-right -z-10"></div>
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <div class="grid md:grid-cols-5 gap-12 glass-box p-8 md:p-12 mt-12 mb-12 rounded-3xl border border-white/5 shadow-2xl items-center" data-aos="zoom-in">
+                
+                <div class="md:col-span-2">
+                    <h5 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-4">Inquiries</h5>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">Let's <br>Talk.</h2>
+                    <p class="text-gray-400 font-light text-lg">Available for freelance opportunities and long-term roles.</p>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <form action="https://formspree.io/f/mdknoznj" method="POST" class="space-y-6">
+                        <div class="relative">
+                            <input type="text" name="name" required placeholder="Full Name" class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-gold transition-colors placeholder-gray-600 transition-all font-light">
+                        </div>
+                        <div class="relative">
+                            <input type="email" name="email" required placeholder="Email Address" class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-blue transition-colors placeholder-gray-600 transition-all font-light">
+                        </div>
+                        <div class="relative">
+                            <textarea name="description" rows="3" required placeholder="Project Details" class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-purple transition-colors placeholder-gray-600 transition-all resize-none font-light"></textarea>
+                        </div>
+                        <button type="submit" class="group flex items-center justify-between w-full py-4 text-white font-bold uppercase tracking-widest border border-white/20 hover:border-white transition-all hover:bg-white hover:text-black rounded-lg px-6">
+                            <span>Submit Initialization</span>
+                            <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-     			<!-- <ul class="footer-social">        
-			      <li><a href="https://www.facebook.com/rohan.wadadar"><i class="fa fa-facebook"></i></a></li>
-			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>			     
-			      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			   </ul>  -->
-	      		
-	      </div>
+    <!-- Unified Footer Matches index.html perfectly -->
+    <footer class="py-12 bg-[#121212] border-t border-[rgba(255,255,255,0.05)] text-center relative z-20">
+        <div class="flex flex-col items-center">
+            <h2 class="text-2xl font-heading font-extrabold tracking-tighter text-white mb-6 mb-8 opacity-80 backdrop-blur-sm">Rohan<span class="text-brand-gold">.</span></h2>
+            
+            <div class="text-gray-400 text-[15px] flex flex-col items-center space-y-3 font-light tracking-wide max-w-sm mx-auto">
+                <span class="block">&copy; Copyright 2023 </span>
+                <span class="block">Design by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
+                <span class="block">Distributed by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
+                <span class="block">Email Powered by <a href="https://formspree.io/forms/mdknoznj/submissions" class="text-white hover:text-brand-blue transition-colors pb-1 border-b border-brand-blue">formspree</a></span>
+            </div>
+        </div>
+    </footer>
 
-      	<div class="col-eight tab-full">
-	      	<div class="copyright">
-		        	<span>© Copyright 2023 </span> 
-		        	<span>Design by <a href="https://hhappt115.wixstudio.io/mysite">rohanstudio</a></span> 
-		        	<span>Distributed by <a href="https://hhappt115.wixstudio.io/mysite">rohanstudio</a></span>	
-					<span>Email Powered by <a href="https://formspree.io/forms/mdknoznj/submissions">formspree</a></span>	          	
-		         </div>		                  
-	      	</div>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize animations smoothly
+        AOS.init({ once: true, offset: 50, duration: 800 });
 
-	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="https://shakiz.github.io/#top"><i class="fa fa-long-arrow-up"></i></a>
-		      </div>
+        // Glass Navbar Scroll behavior
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Keep pill design but tighten it
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+                navbar.firstElementChild.classList.add('bg-[rgba(0,0,0,0.8)]', 'border-white/20');
+            } else {
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+                navbar.firstElementChild.classList.remove('bg-[rgba(0,0,0,0.8)]', 'border-white/20');
+            }
+        });
 
-      	</div> <!-- /row -->     	
-   </footer>  
+        // Mobile Menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
 
-   <div id="preloader" style="display: none;"> 
-    	<div id="loader" style="display: none;"></div>
-   </div> 
+        // CV Modal Logic
+        const modal = document.getElementById('cv-modal');
+        const modalContent = document.getElementById('cv-modal-content');
+        
+        function openCV() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
 
-   <!-- Java Script
-   ================================================== --> 
-   <script src="./rohanport/jquery-2.1.3.min.js.download"></script>
-   <script src="./rohanport/plugins.js.download"></script>
-   <script src="./rohanport/main.js.download"></script>
-<style>
-	
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: #fff; /* Text color */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; /* Remove underline */
-}
+        function closeCV() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
 
-.overlay:hover {
-    opacity: 1; /* Show on hover */
-}
-</style>
-
-<scribe-shadow id="crxjs-ext" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; z-index: 2147483647; overflow: visible; visibility: visible;"><template shadowrootmode="open"><div id="root-scribe-elem" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; overflow: visible; color: rgb(15, 23, 42);"><div></div><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed bottom-auto right-0 top-0 z-[10000000] flex max-h-screen min-w-[300px] max-w-[360px] p-4"></ol></div></div><link rel="stylesheet" href="chrome-extension://okfkdaglfjjjfefdcppliegebpoegaii/assets/style.css"></template></scribe-shadow></body></html>
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeCV();
+        });
+    </script>
+</body>
+</html>
