@@ -120,6 +120,10 @@
         .animated-bg-line {
             background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
         }
+
+        .slider-dot {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
     </style>
 </head>
 
@@ -650,49 +654,108 @@
                     <div
                         class="relative w-full max-w-[280px] mx-auto rounded-[2rem] overflow-hidden bg-black mt-auto aspect-[9/16] border-[6px] border-[#09090b] shadow-[0_0_40px_rgba(59,130,246,0.15)] group">
                         <!-- Simulated phone notch for premium feel -->
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-[#09090b] rounded-b-xl z-20 flex justify-center items-end pb-1">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-[#09090b] rounded-b-xl z-20 flex justify-center items-end pb-1">
                             <div class="w-10 h-1 rounded-full bg-white/10"></div>
                         </div>
-                        
+
                         <video src="https://ik.imagekit.io/rohanwadadar/InShot_20260407_122144071.mp4"
-                            class="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105" autoplay loop controls playsinline>
+                            class="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
+                            autoplay loop controls playsinline>
                         </video>
-                        
+
                         <div
                             class="absolute inset-0 border border-white/20 rounded-[1.6rem] transition-all duration-300 pointer-events-none z-30">
                         </div>
                     </div>
                 </div>
 
-                <!-- Highlight 2: Upcoming AI Platform -->
-                <div class="glass-box rounded-3xl p-8 border border-white/10 border-dashed hover:border-brand-gold/30 transition-all shadow-2xl flex flex-col relative overflow-hidden"
+                <!-- Highlight 2: Lumina AI -->
+                <div class="glass-box rounded-3xl p-8 border border-white/10 hover:border-brand-gold/30 transition-all shadow-2xl flex flex-col relative overflow-hidden"
                     data-aos="fade-left" data-aos-delay="100">
-                    <!-- Subtle background glow for upcoming feature -->
+                    <!-- Subtle background glow for feature -->
                     <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-gold/10 rounded-full blur-[80px]">
                     </div>
 
                     <div class="flex justify-between items-center mb-6 z-10">
-                        <h3 class="text-3xl font-heading font-bold text-white">AI Platform <span
-                                class="text-sm font-sans font-medium text-brand-black uppercase tracking-widest ml-2 px-3 py-1 bg-brand-gold rounded-full border border-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]">Coming
-                                Soon</span></h3>
-                    </div>
-                    <p class="text-gray-400 font-light text-lg mb-8 z-10 text-balance">An all-in-one Artificial Intelligence platform
-                        integrating structured roadmap generation, interactive quizzes, and a dynamic AI Chatbot
-                        experience.</p>
-
-                    <div
-                        class="relative w-full rounded-2xl overflow-hidden bg-brand-dark/50 mt-auto flex-grow border border-white/5 flex flex-col items-center justify-center text-center p-8 z-10 min-h-[400px]">
-                        <div
-                            class="w-20 h-20 rounded-full bg-brand-black border-2 border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 animate-pulse-slow">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                        <h3 class="text-3xl font-heading font-bold text-white flex items-center gap-3">
+                            Lumina AI
+                            <span
+                                class="text-xs font-sans font-medium text-brand-black uppercase tracking-widest px-3 py-1 bg-brand-gold rounded-full border border-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]">Live
+                                Hub</span>
+                        </h3>
+                        <a href="https://lumina-qow7se54k-rohanwadadars-projects.vercel.app/" target="_blank"
+                            class="w-12 h-12 rounded-full bg-brand-black border border-brand-gold flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-white transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] hover-lift">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
                                 </path>
                             </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 font-light text-lg mb-6 z-10">A versatile AI ecosystem for unrestricted chat
+                        without login, intelligent roadmap generation, and topical quizzes with real-time feedback.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 z-10">
+                        <div class="flex items-center gap-3 text-gray-400 text-sm">
+                            <div class="w-2 h-2 bg-brand-gold rounded-full"></div> Unrestricted AI Chat (No Login)
                         </div>
-                        <h4 class="text-2xl font-bold text-white mb-3 tracking-wide">Roadmap, Quiz & Chatbot Engine</h4>
-                        <p class="text-base text-gray-500 font-light max-w-sm">Currently under development. The next evolution of
-                            dynamic AI learning architecture.</p>
+                        <div class="flex items-center gap-3 text-gray-400 text-sm">
+                            <div class="w-2 h-2 bg-brand-gold rounded-full"></div> Stylish Roadmap Generator
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400 text-sm">
+                            <div class="w-2 h-2 bg-brand-gold rounded-full"></div> Interactive Quiz Engine
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-400 text-sm">
+                            <div class="w-2 h-2 bg-brand-gold rounded-full"></div> Prompt Suggestions & Corrections
+                        </div>
+                    </div>
+
+                    <!-- Sliding Window (Carousel) -->
+                    <div
+                        class="relative w-full rounded-2xl overflow-hidden mt-auto flex-grow group/slider min-h-[320px] border border-white/5 shadow-2xl">
+                        <div class="flex transition-transform duration-700 ease-in-out h-full w-full"
+                            id="lumina-slider">
+                            <div class="w-full h-full shrink-0">
+                                <img src="assets/images/lumina_chat.png" alt="Lumina Chat Interface"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-full h-full shrink-0">
+                                <img src="assets/images/lumina_roadmap.png" alt="Lumina Roadmap Designer"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-full h-full shrink-0">
+                                <img src="assets/images/lumina_quiz.png" alt="Lumina Quiz Interface"
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <button onclick="prevSlide()"
+                            class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all z-20 hover:bg-brand-gold hover:text-black border border-white/10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="nextSlide()"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all z-20 hover:bg-brand-gold hover:text-black border border-white/10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <!-- Dots -->
+                        <div
+                            class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20 bg-black/40 backdrop-blur-md px-3 py-2 rounded-full border border-white/10">
+                            <div class="w-4 h-1.5 rounded-full bg-brand-gold cursor-pointer transition-all slider-dot"
+                                onclick="goToSlide(0)"></div>
+                            <div class="w-2 h-1.5 rounded-full bg-white/30 cursor-pointer transition-all slider-dot"
+                                onclick="goToSlide(1)"></div>
+                            <div class="w-2 h-1.5 rounded-full bg-white/30 cursor-pointer transition-all slider-dot"
+                                onclick="goToSlide(2)"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -822,6 +885,43 @@
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeCV();
         });
+
+        // Lumina Slider Logic
+        let luminaCurrentSlide = 0;
+        const luminaSlider = document.getElementById('lumina-slider');
+        const luminaDots = document.querySelectorAll('.slider-dot');
+        const luminaTotalSlides = 3;
+
+        function updateLuminaSlider() {
+            luminaSlider.style.transform = `translateX(-${luminaCurrentSlide * 100}%)`;
+            luminaDots.forEach((dot, index) => {
+                if (index === luminaCurrentSlide) {
+                    dot.classList.add('bg-brand-gold', 'w-4');
+                    dot.classList.remove('bg-white/30', 'w-2');
+                } else {
+                    dot.classList.remove('bg-brand-gold', 'w-4');
+                    dot.classList.add('bg-white/30', 'w-2');
+                }
+            });
+        }
+
+        function nextSlide() {
+            luminaCurrentSlide = (luminaCurrentSlide + 1) % luminaTotalSlides;
+            updateLuminaSlider();
+        }
+
+        function prevSlide() {
+            luminaCurrentSlide = (luminaCurrentSlide - 1 + luminaTotalSlides) % luminaTotalSlides;
+            updateLuminaSlider();
+        }
+
+        function goToSlide(index) {
+            luminaCurrentSlide = index;
+            updateLuminaSlider();
+        }
+
+        // Auto-play slider
+        setInterval(nextSlide, 5000);
 
         // Security / Inspection Prevention Script
         document.addEventListener('contextmenu', event => event.preventDefault());
