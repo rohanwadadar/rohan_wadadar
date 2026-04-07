@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohan Wadadar | Portfolio</title>
-    
+
     <!-- Open Graph  / Social Media Link Previews -->
     <meta property="og:title" content="Rohan Wadadar | Full Stack Developer">
-    <meta property="og:description" content="Software Engineering Apprentice @ SETU Business School | Flask, React, Microservices | B.Sc. Computer Science (Hons.) | ISC & ICSE Alum.">
+    <meta property="og:description"
+        content="Software Engineering Apprentice @ SETU Business School | Flask, React, Microservices | B.Sc. Computer Science (Hons.) | ISC & ICSE Alum.">
     <meta property="og:image" content="https://rohanwadadar.github.io/rohan_wadadar/assets/images/og_image.png">
     <meta property="og:url" content="https://rohanwadadar.github.io/rohan_wadadar/">
     <meta property="og:type" content="website">
@@ -16,17 +18,21 @@
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rohan Wadadar | Full Stack Developer">
-    <meta name="twitter:description" content="Software Engineering Apprentice @ SETU Business School | Flask, React, Microservices">
+    <meta name="twitter:description"
+        content="Software Engineering Apprentice @ SETU Business School | Flask, React, Microservices">
     <meta name="twitter:image" content="https://rohanwadadar.github.io/rohan_wadadar/assets/images/og_image.png">
 
     <!-- R Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23D4AF37'/><text x='50%25' y='50%25' font-family='Arial' font-size='70' font-weight='bold' fill='%2309090b' text-anchor='middle' dy='.35em'>R</text></svg>">
-    
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23D4AF37'/><text x='50%25' y='50%25' font-family='Arial' font-size='70' font-weight='bold' fill='%2309090b' text-anchor='middle' dy='.35em'>R</text></svg>">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -60,10 +66,22 @@
 
     <style>
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #09090b; }
-        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
 
         /* Professional Glassmorphism Pill */
         .glass-nav {
@@ -72,7 +90,7 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         /* Box elements */
         .glass-box {
             background: rgba(24, 24, 27, 0.6);
@@ -91,49 +109,72 @@
         .hover-lift {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s;
         }
+
         .hover-lift:hover {
             transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.4); /* Gold subtle hover glow */
+            border-color: rgba(212, 175, 55, 0.4);
+            /* Gold subtle hover glow */
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
         }
-        
+
         .animated-bg-line {
             background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
         }
     </style>
 </head>
 
-<body class="bg-brand-black text-brand-white font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-black">
+<body
+    class="bg-brand-black text-brand-white font-sans antialiased overflow-x-hidden selection:bg-brand-gold selection:text-black">
 
     <!-- Subtle Abstract Grid Background lines instead of neon blobs -->
     <div class="fixed inset-0 w-full h-full pointer-events-none z-[-1]">
         <!-- Very faint grid pattern -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]">
+        </div>
         <!-- Sophisticated subtle upper glow -->
-        <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[50%] bg-brand-blue/10 rounded-full blur-[140px] animate-pulse-slow"></div>
-        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[40%] bg-brand-purple/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div
+            class="absolute top-[-20%] left-[-10%] w-[60%] h-[50%] bg-brand-blue/10 rounded-full blur-[140px] animate-pulse-slow">
+        </div>
+        <div
+            class="absolute top-[-10%] right-[-10%] w-[50%] h-[40%] bg-brand-purple/10 rounded-full blur-[120px] animate-pulse-slow">
+        </div>
     </div>
 
     <!-- CV Modal -->
-    <div id="cv-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-md p-4 opacity-0 transition-opacity duration-300">
-        <div class="relative w-full max-w-4xl max-h-[90vh] glass-box rounded-2xl p-6 flex flex-col items-center overflow-y-auto transform scale-95 transition-transform duration-300" id="cv-modal-content">
-            <button onclick="closeCV()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors bg-brand-dark rounded-full p-2">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <div id="cv-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-md p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative w-full max-w-4xl max-h-[90vh] glass-box rounded-2xl p-6 flex flex-col items-center overflow-y-auto transform scale-95 transition-transform duration-300"
+            id="cv-modal-content">
+            <button onclick="closeCV()"
+                class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors bg-brand-dark rounded-full p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
             </button>
-            
+
             <h3 class="font-heading text-2xl font-bold mb-6 text-white tracking-widest uppercase">Curriculum Vitae</h3>
-            
+
             <div class="w-full bg-white rounded-lg p-2 mb-8 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 <img src="assets/images/resume_preview.jpg" alt="Resume Preview" class="w-full h-auto rounded">
             </div>
-            
+
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="assets/docs/resume.pdf" download class="px-8 py-3 bg-white text-black hover:bg-gray-200 rounded-full font-semibold tracking-wide transition-all hover-lift flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <a href="assets/docs/resume.pdf" download
+                    class="px-8 py-3 bg-white text-black hover:bg-gray-200 rounded-full font-semibold tracking-wide transition-all hover-lift flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
                     Download PDF
                 </a>
-                <a href="assets/images/resume_preview.jpg" download class="px-8 py-3 bg-transparent border border-white/20 hover:border-white text-white rounded-full font-semibold tracking-wide transition-all hover-lift flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <a href="assets/images/resume_preview.jpg" download
+                    class="px-8 py-3 bg-transparent border border-white/20 hover:border-white text-white rounded-full font-semibold tracking-wide transition-all hover-lift flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
                     Download Image
                 </a>
             </div>
@@ -142,33 +183,50 @@
 
     <!-- Floating Pill Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-8" id="navbar">
-        <div class="max-w-7xl mx-auto glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-2xl transition-all border border-white/10">
-            <a href="#" class="text-2xl font-heading font-extrabold tracking-tighter text-white flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-brand-black" style="font-family: Arial, sans-serif;">R</div>
+        <div
+            class="max-w-7xl mx-auto glass-nav rounded-full px-6 py-3 flex justify-between items-center shadow-2xl transition-all border border-white/10">
+            <a href="#"
+                class="text-2xl font-heading font-extrabold tracking-tighter text-white flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-brand-black"
+                    style="font-family: Arial, sans-serif;">R</div>
                 <span>Rohan<span class="text-brand-gold">.</span></span>
             </a>
-            
+
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 items-center bg-transparent">
-                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">About</a>
-                <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Experience</a>
-                <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Deployments</a>
-                <a href="lifestyle.html" class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Lifestyle</a>
-                <a href="gallery.html" class="text-sm font-medium text-brand-gold flex items-center gap-1 transition-colors hover:text-white">
+                <a href="#about"
+                    class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="#experience"
+                    class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Experience</a>
+                <a href="#projects"
+                    class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Deployments</a>
+                <a href="lifestyle.html"
+                    class="text-sm font-medium text-gray-300 hover:text-brand-gold transition-colors">Lifestyle</a>
+                <a href="gallery.html"
+                    class="text-sm font-medium text-brand-gold flex items-center gap-1 transition-colors hover:text-white">
                     App Gallery
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
                 </a>
-                <a href="#contact" class="px-5 py-2 rounded-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all text-sm font-semibold shadow-[0_0_15px_rgba(59,130,246,0.2)]">Let's Talk</a>
+                <a href="#contact"
+                    class="px-5 py-2 rounded-full border border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all text-sm font-semibold shadow-[0_0_15px_rgba(59,130,246,0.2)]">Let's
+                    Talk</a>
             </div>
 
             <!-- Mobile Menu Button -->
             <button class="md:hidden text-white" id="mobile-menu-btn">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden mt-4 max-w-7xl mx-auto glass-nav rounded-2xl border-white/5 overflow-hidden shadow-2xl" id="mobile-menu">
+        <div class="md:hidden hidden mt-4 max-w-7xl mx-auto glass-nav rounded-2xl border-white/5 overflow-hidden shadow-2xl"
+            id="mobile-menu">
             <div class="flex flex-col px-6 py-4 space-y-4">
                 <a href="#about" class="text-gray-300 hover:text-brand-gold font-medium">About</a>
                 <a href="#experience" class="text-gray-300 hover:text-brand-gold font-medium">Experience</a>
@@ -182,8 +240,10 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-28 px-6">
-        <div class="container mx-auto flex flex-col items-center text-center z-10" data-aos="fade-up" data-aos-duration="1000">
-            <p class="text-brand-gold uppercase tracking-[0.3em] text-xs md:text-sm font-semibold mb-6 flex items-center gap-3">
+        <div class="container mx-auto flex flex-col items-center text-center z-10" data-aos="fade-up"
+            data-aos-duration="1000">
+            <p
+                class="text-brand-gold uppercase tracking-[0.3em] text-xs md:text-sm font-semibold mb-6 flex items-center gap-3">
                 <span class="w-10 h-[1px] bg-brand-gold hidden sm:block"></span>
                 Software Engineer
                 <span class="w-10 h-[1px] bg-brand-gold hidden sm:block"></span>
@@ -192,22 +252,35 @@
                 <span class="text-gradient">Rohan Wadadar</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mb-12">
-                Crafting robust backend architectures and minimalist frontend experiences. Specialized in <span class="text-white font-medium">Flask, React, and Microservices</span>.
+                Crafting robust backend architectures and minimalist frontend experiences. Specialized in <span
+                    class="text-white font-medium">Flask, React, and Microservices</span>.
             </p>
             <div class="flex flex-col sm:flex-row gap-5">
-                <a href="#projects" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all hover-lift min-w-[180px]">View Work</a>
-                <button onclick="openCV()" class="px-8 py-4 glass-box border border-white/20 text-white font-bold rounded-full hover:border-brand-gold hover:text-brand-gold transition-all hover-lift flex items-center justify-center gap-3 min-w-[180px]">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                <a href="#projects"
+                    class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all hover-lift min-w-[180px]">View
+                    Work</a>
+                <button onclick="openCV()"
+                    class="px-8 py-4 glass-box border border-white/20 text-white font-bold rounded-full hover:border-brand-gold hover:text-brand-gold transition-all hover-lift flex items-center justify-center gap-3 min-w-[180px]">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                        </path>
+                    </svg>
                     Resume
                 </button>
             </div>
         </div>
-        
+
         <!-- Scroll indicator -->
         <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
             <a href="#about" class="text-gray-500 hover:text-white transition-colors flex flex-col items-center">
                 <span class="text-xs uppercase tracking-widest mb-2 opacity-50">Scroll</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
             </a>
         </div>
     </section>
@@ -219,30 +292,36 @@
     <section id="about" class="py-24 px-6 relative">
         <div class="container mx-auto max-w-6xl">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                
+
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-8">Engineering <br/><span class="text-brand-gold italic font-light">Elegance</span>.</h2>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-8">Engineering <br /><span
+                            class="text-brand-gold italic font-light">Elegance</span>.</h2>
                     <p class="text-gray-400 text-lg leading-relaxed mb-4 font-light">
-                        Aspiring Full Stack Web Developer with a strong foundation in web development principles and a passion for learning. Eager to contribute to team discussions and collaborate on successful project deliveries. Known for problem-solving skills and a keen focus on improving user experiences.
+                        Aspiring Full Stack Web Developer with a strong foundation in web development principles and a
+                        passion for learning. Eager to contribute to team discussions and collaborate on successful
+                        project deliveries. Known for problem-solving skills and a keen focus on improving user
+                        experiences.
                     </p>
                     <p class="text-gray-400 text-lg leading-relaxed mb-6 font-light">
-                        Committed to enhancing proficiencies through continuous learning, adapting to new technologies, and embracing code review practices. Beyond coding, I am an active cricketer, athlete, gym enthusiast, enjoy cooking, and creating content as a social media influencer.
+                        Committed to enhancing proficiencies through continuous learning, adapting to new technologies,
+                        and embracing code review practices. Beyond coding, I am an active cricketer, athlete, gym
+                        enthusiast, enjoy cooking, and creating content as a social media influencer.
                     </p>
                     <div class="glass-box p-8 rounded-2xl border-white/5 mt-8">
                         <ul class="space-y-5">
                             <li class="flex items-center text-gray-300">
                                 <span class="w-8 border-b border-brand-purple mr-4"></span>
-                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">Email</span> 
+                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">Email</span>
                                 <span class="font-light">rwadadar@gmail.com</span>
                             </li>
                             <li class="flex items-center text-gray-300">
                                 <span class="w-8 border-b border-brand-blue mr-4"></span>
-                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">LinkedIn</span> 
+                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">LinkedIn</span>
                                 <span class="font-light">@Rohawadadar</span>
                             </li>
                             <li class="flex items-center text-gray-300">
                                 <span class="w-8 border-b border-brand-gold mr-4"></span>
-                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">Location</span> 
+                                <span class="w-24 font-bold text-white text-sm tracking-wider uppercase">Location</span>
                                 <span class="font-light">India</span>
                             </li>
                         </ul>
@@ -250,26 +329,33 @@
                 </div>
 
                 <div data-aos="fade-left" class="bg-brand-dark/50 p-8 rounded-3xl border border-white/5">
-                    <h3 class="text-2xl font-heading font-bold mb-8 text-white uppercase tracking-widest text-center">Core Tech Stack</h3>
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-white uppercase tracking-widest text-center">
+                        Core Tech Stack</h3>
                     <div class="space-y-6">
                         <!-- Skill 1 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-semibold tracking-wide text-gray-300">Java & Spring Boot</span>
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">Java & Spring
+                                    Boot</span>
                                 <span class="text-sm font-bold text-white">90%</span>
                             </div>
                             <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
-                                <div class="bg-brand-gold h-1.5 rounded-full relative" style="width: 90%"><div class="absolute inset-0 bg-white/20"></div></div>
+                                <div class="bg-brand-gold h-1.5 rounded-full relative" style="width: 90%">
+                                    <div class="absolute inset-0 bg-white/20"></div>
+                                </div>
                             </div>
                         </div>
                         <!-- Skill 2 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-semibold tracking-wide text-gray-300">React & JavaScript</span>
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">React &
+                                    JavaScript</span>
                                 <span class="text-sm font-bold text-white">85%</span>
                             </div>
                             <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
-                                <div class="bg-brand-blue h-1.5 rounded-full relative" style="width: 85%"><div class="absolute inset-0 bg-white/20"></div></div>
+                                <div class="bg-brand-blue h-1.5 rounded-full relative" style="width: 85%">
+                                    <div class="absolute inset-0 bg-white/20"></div>
+                                </div>
                             </div>
                         </div>
                         <!-- Skill 3 -->
@@ -279,13 +365,16 @@
                                 <span class="text-sm font-bold text-white">80%</span>
                             </div>
                             <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
-                                <div class="bg-brand-purple h-1.5 rounded-full relative" style="width: 80%"><div class="absolute inset-0 bg-white/20"></div></div>
+                                <div class="bg-brand-purple h-1.5 rounded-full relative" style="width: 80%">
+                                    <div class="absolute inset-0 bg-white/20"></div>
+                                </div>
                             </div>
                         </div>
                         <!-- Skill 4 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-semibold tracking-wide text-gray-300">HTML / CSS / UI/UX</span>
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">HTML / CSS /
+                                    UI/UX</span>
                                 <span class="text-sm font-bold text-white">85%</span>
                             </div>
                             <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
@@ -295,7 +384,8 @@
                         <!-- Skill 5 -->
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-semibold tracking-wide text-gray-300">Flutter / Git / AWS</span>
+                                <span class="text-sm font-semibold tracking-wide text-gray-300">Flutter / Git /
+                                    AWS</span>
                                 <span class="text-sm font-bold text-white">75%</span>
                             </div>
                             <div class="w-full bg-black rounded-full h-1.5 overflow-hidden">
@@ -318,52 +408,66 @@
             </div>
 
             <div class="relative border-l border-white/10 ml-3 md:ml-6 space-y-12 pb-8">
-                
+
                 <!-- Timeline Item 1 -->
                 <div class="relative pl-8 md:pl-0 group" data-aos="fade-up">
-                    <div class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-gold rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-gold">
+                    <div
+                        class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-gold rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-gold">
                         <div class="w-2 h-2 bg-brand-gold rounded-full group-hover:bg-black transition-colors"></div>
                     </div>
-                    <div class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all hover:-translate-y-1 shadow-lg">
-                        <span class="inline-block text-brand-gold text-sm font-bold tracking-wider mb-2">2025 - Present</span>
+                    <div
+                        class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all hover:-translate-y-1 shadow-lg">
+                        <span class="inline-block text-brand-gold text-sm font-bold tracking-wider mb-2">2025 -
+                            Present</span>
                         <h3 class="text-2xl font-bold text-white mb-2">Software Engineering Apprentice</h3>
                         <h4 class="text-lg text-gray-300 mb-4 font-heading font-medium">SETU Business School</h4>
                         <p class="text-gray-400 font-light leading-relaxed">
-                            Crafting backend infrastructure and highly reliant APIs serving extensive data structures using <span class="text-white font-medium">Flask, React, and Microservices</span>. Operating within Agile paradigms.
+                            Crafting backend infrastructure and highly reliant APIs serving extensive data structures
+                            using <span class="text-white font-medium">Flask, React, and Microservices</span>. Operating
+                            within Agile paradigms.
                         </p>
                     </div>
                 </div>
 
                 <!-- Timeline Item 2 -->
                 <div class="relative pl-8 md:pl-0 group" data-aos="fade-up">
-                    <div class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-blue rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-blue">
+                    <div
+                        class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-blue rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-blue">
                         <div class="w-2 h-2 bg-brand-blue rounded-full group-hover:bg-black transition-colors"></div>
                     </div>
-                    <div class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-blue/30 transition-all hover:-translate-y-1 shadow-lg">
-                        <span class="inline-block text-brand-blue text-sm font-bold tracking-wider mb-2">2024 - 2025</span>
+                    <div
+                        class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-blue/30 transition-all hover:-translate-y-1 shadow-lg">
+                        <span class="inline-block text-brand-blue text-sm font-bold tracking-wider mb-2">2024 -
+                            2025</span>
                         <h3 class="text-2xl font-bold text-white mb-2">Front-End Flutter Developer</h3>
                         <h4 class="text-lg text-gray-300 mb-4 font-heading font-medium">Trading App Startup</h4>
                         <p class="text-gray-400 font-light leading-relaxed">
-                            Designed the foundational UI/UX of a fast-paced live stock trading application utilizing Flutter. Connected real-time WebSocket streams for instantaneous market feedback.
+                            Designed the foundational UI/UX of a fast-paced live stock trading application utilizing
+                            Flutter. Connected real-time WebSocket streams for instantaneous market feedback.
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Timeline Item 3 (Education) -->
                 <div class="relative pl-8 md:pl-0 group" data-aos="fade-up">
-                    <div class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-purple rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-purple">
+                    <div
+                        class="hidden md:flex absolute w-8 h-8 bg-brand-black border border-brand-purple rounded-full -left-[16.5px] top-1 items-center justify-center transition-colors group-hover:bg-brand-purple">
                         <div class="w-2 h-2 bg-brand-purple rounded-full group-hover:bg-black transition-colors"></div>
                     </div>
-                    <div class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-purple/30 transition-all hover:-translate-y-1 shadow-lg">
-                        <span class="inline-block text-brand-purple text-sm font-bold tracking-wider mb-4 uppercase">Education</span>
+                    <div
+                        class="md:ml-12 glass-box p-8 rounded-2xl border border-white/5 hover:border-brand-purple/30 transition-all hover:-translate-y-1 shadow-lg">
+                        <span
+                            class="inline-block text-brand-purple text-sm font-bold tracking-wider mb-4 uppercase">Education</span>
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-xl font-bold text-white mb-1">Master of Computer Applications</h3>
-                                <p class="text-gray-400 text-sm">RCC Institute of Information Technology &bull; 2024 - 2026</p>
+                                <p class="text-gray-400 text-sm">RCC Institute of Information Technology &bull; 2024 -
+                                    2026</p>
                             </div>
                             <div class="pt-4 border-t border-white/5">
                                 <h3 class="text-xl font-bold text-white mb-1">B.Sc. Computer Science</h3>
-                                <p class="text-gray-400 text-sm">Vidyasagar College, University of Calcutta &bull; 2021 - 2024</p>
+                                <p class="text-gray-400 text-sm">Vidyasagar College, University of Calcutta &bull; 2021
+                                    - 2024</p>
                             </div>
                         </div>
                     </div>
@@ -385,71 +489,128 @@
                     <p class="text-gray-400 max-w-sm mb-4 font-light text-sm md:text-base">
                         A curation of highly specific frontend structures, client websites, and web applications.
                     </p>
-                    <a href="gallery.html" class="inline-flex items-center gap-2 text-brand-gold hover:text-white font-semibold transition-colors uppercase tracking-wider text-sm border-b border-brand-gold pb-1">
+                    <a href="gallery.html"
+                        class="inline-flex items-center gap-2 text-brand-gold hover:text-white font-semibold transition-colors uppercase tracking-wider text-sm border-b border-brand-gold pb-1">
                         View Full App Gallery
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
 
             <!-- Professional 2 Column Large Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                
+
                 <!-- Project 1 -->
-                <a href="https://ravipublishers.rahulbablu.in/" target="_blank" class="block group hover-lift" data-aos="fade-up">
-                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Ravi Publishers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-gold/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                <a href="https://ravipublishers.rahulbablu.in/" target="_blank" class="block group hover-lift"
+                    data-aos="fade-up">
+                    <div
+                        class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s"
+                            alt="Ravi Publishers"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-gold/50 rounded-2xl transition-all duration-300 pointer-events-none">
+                        </div>
                     </div>
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors">Ravi Publishers</h3>
-                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            <h3
+                                class="text-3xl font-heading font-bold text-white group-hover:text-brand-gold transition-colors">
+                                Ravi Publishers</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-gold transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
                         </div>
-                        <p class="text-gray-400 font-light text-lg">Freelance Client - Scalable publication storefront</p>
+                        <p class="text-gray-400 font-light text-lg">Freelance Client - Scalable publication storefront
+                        </p>
                     </div>
                 </a>
 
                 <!-- Project 2 -->
-                <a href="https://tamal-basu.vercel.app/" target="_blank" class="block group hover-lift md:translate-y-16" data-aos="fade-up" data-aos-delay="150">
-                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Dr. Tamal Basu Portfolio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-blue/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                <a href="https://tamal-basu.vercel.app/" target="_blank"
+                    class="block group hover-lift md:translate-y-16" data-aos="fade-up" data-aos-delay="150">
+                    <div
+                        class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s"
+                            alt="Dr. Tamal Basu Portfolio"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-blue/50 rounded-2xl transition-all duration-300 pointer-events-none">
+                        </div>
                     </div>
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-brand-blue transition-colors">Dr. Tamal Basu</h3>
-                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-blue transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            <h3
+                                class="text-3xl font-heading font-bold text-white group-hover:text-brand-blue transition-colors">
+                                Dr. Tamal Basu</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-blue transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
                         </div>
                         <p class="text-gray-400 font-light text-lg">Polished academic landing page & animations</p>
                     </div>
                 </a>
-                
+
                 <!-- Project 3 -->
-                <a href="https://rohanwadadar.github.io/invoice_generator/" target="_blank" class="block group hover-lift" data-aos="fade-up">
-                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Invoice Gen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-purple/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                <a href="https://rohanwadadar.github.io/invoice_generator/" target="_blank"
+                    class="block group hover-lift" data-aos="fade-up">
+                    <div
+                        class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s"
+                            alt="Invoice Gen"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 border-[4px] border-transparent group-hover:border-brand-purple/50 rounded-2xl transition-all duration-300 pointer-events-none">
+                        </div>
                     </div>
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-brand-purple transition-colors">InstaInvoice API</h3>
-                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-purple transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            <h3
+                                class="text-3xl font-heading font-bold text-white group-hover:text-brand-purple transition-colors">
+                                InstaInvoice API</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-brand-purple transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
                         </div>
                         <p class="text-gray-400 font-light text-lg">React-based high fidelity PDF tooling</p>
                     </div>
                 </a>
 
                 <!-- Project 4 -->
-                <a href="https://shoes-6chjqk1ps-rohanwadadars-projects.vercel.app/" target="_blank" class="block group hover-lift md:translate-y-16" data-aos="fade-up" data-aos-delay="150">
-                    <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s" alt="Shoes App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
-                        <div class="absolute inset-0 border-[4px] border-transparent group-hover:border-white/50 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                <a href="https://shoes-6chjqk1ps-rohanwadadars-projects.vercel.app/" target="_blank"
+                    class="block group hover-lift md:translate-y-16" data-aos="fade-up" data-aos-delay="150">
+                    <div
+                        class="relative overflow-hidden rounded-2xl bg-black border border-white/10 aspect-[16/10] mb-6 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO_6L_2FWefLguJ9bgBD-w1Ie0k2DF12Rdug&s"
+                            alt="Shoes App"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 border-[4px] border-transparent group-hover:border-white/50 rounded-2xl transition-all duration-300 pointer-events-none">
+                        </div>
                     </div>
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-3xl font-heading font-bold text-white group-hover:text-white transition-colors">Shoe Shop UI/UX</h3>
-                            <svg class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            <h3
+                                class="text-3xl font-heading font-bold text-white group-hover:text-white transition-colors">
+                                Shoe Shop UI/UX</h3>
+                            <svg class="w-6 h-6 text-gray-500 group-hover:text-white transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
                         </div>
                         <p class="text-gray-400 font-light text-lg">Modern frontend mapping shopping flows</p>
                     </div>
@@ -459,39 +620,127 @@
         </div>
     </section>
 
+    <!-- Recent Work Highlights Section -->
+    <section id="highlights" class="py-24 px-6 relative z-10 border-t border-white/5 bg-brand-dark/20">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h5 class="text-brand-purple font-bold uppercase tracking-widest text-sm mb-2">Featured Highlights</h5>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold text-white">Recent Work & <span
+                        class="text-brand-gold italic font-light">Innovations</span></h2>
+            </div>
 
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                <!-- Highlight 1: Z-Chats -->
+                <div class="glass-box rounded-3xl p-8 border border-white/10 hover:border-brand-blue/30 transition-all shadow-2xl flex flex-col"
+                    data-aos="fade-right">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-3xl font-heading font-bold text-white">Z-Chats</h3>
+                        <a href="https://gen-z-frontend-theta.vercel.app/" target="_blank"
+                            class="w-12 h-12 rounded-full bg-brand-black border border-brand-blue flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)] hover-lift">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 font-light text-lg mb-8">A modern chatting platform designed specifically
+                        for Gen Z. Fast, fluid, and brilliantly social.</p>
 
+                    <div
+                        class="relative w-full max-w-[280px] mx-auto rounded-[2rem] overflow-hidden bg-black mt-auto aspect-[9/16] border-[6px] border-[#09090b] shadow-[0_0_40px_rgba(59,130,246,0.15)] group">
+                        <!-- Simulated phone notch for premium feel -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-[#09090b] rounded-b-xl z-20 flex justify-center items-end pb-1">
+                            <div class="w-10 h-1 rounded-full bg-white/10"></div>
+                        </div>
+                        
+                        <video src="https://ik.imagekit.io/rohanwadadar/InShot_20260407_122144071.mp4"
+                            class="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105" autoplay loop controls playsinline>
+                        </video>
+                        
+                        <div
+                            class="absolute inset-0 border border-white/20 rounded-[1.6rem] transition-all duration-300 pointer-events-none z-30">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlight 2: Upcoming AI Platform -->
+                <div class="glass-box rounded-3xl p-8 border border-white/10 border-dashed hover:border-brand-gold/30 transition-all shadow-2xl flex flex-col relative overflow-hidden"
+                    data-aos="fade-left" data-aos-delay="100">
+                    <!-- Subtle background glow for upcoming feature -->
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-gold/10 rounded-full blur-[80px]">
+                    </div>
+
+                    <div class="flex justify-between items-center mb-6 z-10">
+                        <h3 class="text-3xl font-heading font-bold text-white">AI Platform <span
+                                class="text-sm font-sans font-medium text-brand-black uppercase tracking-widest ml-2 px-3 py-1 bg-brand-gold rounded-full border border-brand-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]">Coming
+                                Soon</span></h3>
+                    </div>
+                    <p class="text-gray-400 font-light text-lg mb-8 z-10 text-balance">An all-in-one Artificial Intelligence platform
+                        integrating structured roadmap generation, interactive quizzes, and a dynamic AI Chatbot
+                        experience.</p>
+
+                    <div
+                        class="relative w-full rounded-2xl overflow-hidden bg-brand-dark/50 mt-auto flex-grow border border-white/5 flex flex-col items-center justify-center text-center p-8 z-10 min-h-[400px]">
+                        <div
+                            class="w-20 h-20 rounded-full bg-brand-black border-2 border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 animate-pulse-slow">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3 tracking-wide">Roadmap, Quiz & Chatbot Engine</h4>
+                        <p class="text-base text-gray-500 font-light max-w-sm">Currently under development. The next evolution of
+                            dynamic AI learning architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Professional Contact API Block -->
     <section id="contact" class="py-24 px-6 relative mt-16 lg:mt-32">
-        <div class="absolute inset-0 bg-brand-dark border-t border-white/5 transform skew-y-[-2deg] origin-bottom-right -z-10"></div>
+        <div
+            class="absolute inset-0 bg-brand-dark border-t border-white/5 transform skew-y-[-2deg] origin-bottom-right -z-10">
+        </div>
         <div class="container mx-auto max-w-4xl relative z-10">
-            <div class="grid md:grid-cols-5 gap-12 glass-box p-8 md:p-12 mt-12 mb-12 rounded-3xl border border-white/5 shadow-2xl items-center" data-aos="zoom-in">
-                
+            <div class="grid md:grid-cols-5 gap-12 glass-box p-8 md:p-12 mt-12 mb-12 rounded-3xl border border-white/5 shadow-2xl items-center"
+                data-aos="zoom-in">
+
                 <div class="md:col-span-2">
                     <h5 class="text-brand-gold font-bold uppercase tracking-widest text-sm mb-4">Inquiries</h5>
                     <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">Let's <br>Talk.</h2>
-                    <p class="text-gray-400 font-light text-lg">Available for freelance opportunities and long-term roles.</p>
+                    <p class="text-gray-400 font-light text-lg">Available for freelance opportunities and long-term
+                        roles.</p>
                 </div>
-                
+
                 <div class="md:col-span-3">
                     <form action="https://formspree.io/f/mdknoznj" method="POST" class="space-y-6">
                         <div class="relative">
-                            <input type="text" name="name" required placeholder="Full Name" class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-gold transition-colors placeholder-gray-600 transition-all font-light">
+                            <input type="text" name="name" required placeholder="Full Name"
+                                class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-gold transition-colors placeholder-gray-600 transition-all font-light">
                         </div>
                         <div class="relative">
-                            <input type="email" name="email" required placeholder="Email Address" class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-blue transition-colors placeholder-gray-600 transition-all font-light">
+                            <input type="email" name="email" required placeholder="Email Address"
+                                class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-blue transition-colors placeholder-gray-600 transition-all font-light">
                         </div>
                         <div class="relative">
-                            <textarea name="description" rows="3" required placeholder="Project Details" class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-purple transition-colors placeholder-gray-600 transition-all resize-none font-light"></textarea>
+                            <textarea name="description" rows="3" required placeholder="Project Details"
+                                class="w-full bg-brand-black border-b-2 border-white/20 px-4 py-4 text-white focus:outline-none focus:border-brand-purple transition-colors placeholder-gray-600 transition-all resize-none font-light"></textarea>
                         </div>
-                        <button type="submit" class="group flex items-center justify-between w-full py-4 text-white font-bold uppercase tracking-widest border border-white/20 hover:border-white transition-all hover:bg-white hover:text-black rounded-lg px-6">
+                        <button type="submit"
+                            class="group flex items-center justify-between w-full py-4 text-white font-bold uppercase tracking-widest border border-white/20 hover:border-white transition-all hover:bg-white hover:text-black rounded-lg px-6">
                             <span>Submit Initialization</span>
-                            <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <svg class="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
                         </button>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -499,13 +748,19 @@
     <!-- Unified Footer Matches index.html perfectly -->
     <footer class="py-12 bg-[#121212] border-t border-[rgba(255,255,255,0.05)] text-center relative z-20">
         <div class="flex flex-col items-center">
-            <h2 class="text-2xl font-heading font-extrabold tracking-tighter text-white mb-6 mb-8 opacity-80 backdrop-blur-sm">Rohan<span class="text-brand-gold">.</span></h2>
-            
-            <div class="text-gray-400 text-[15px] flex flex-col items-center space-y-3 font-light tracking-wide max-w-sm mx-auto">
+            <h2
+                class="text-2xl font-heading font-extrabold tracking-tighter text-white mb-6 mb-8 opacity-80 backdrop-blur-sm">
+                Rohan<span class="text-brand-gold">.</span></h2>
+
+            <div
+                class="text-gray-400 text-[15px] flex flex-col items-center space-y-3 font-light tracking-wide max-w-sm mx-auto">
                 <span class="block">&copy; Copyright 2023 </span>
-                <span class="block">Design by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
-                <span class="block">Distributed by <a href="https://hhappt115.wixstudio.io/mysite" class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
-                <span class="block">Email Powered by <a href="https://formspree.io/forms/mdknoznj/submissions" class="text-white hover:text-brand-blue transition-colors pb-1 border-b border-brand-blue">formspree</a></span>
+                <span class="block">Design by <a href="https://hhappt115.wixstudio.io/mysite"
+                        class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
+                <span class="block">Distributed by <a href="https://hhappt115.wixstudio.io/mysite"
+                        class="text-white hover:text-brand-gold transition-colors underline-offset-4 hover:underline">rohanstudio</a></span>
+                <span class="block">Email Powered by <a href="https://formspree.io/forms/mdknoznj/submissions"
+                        class="text-white hover:text-brand-blue transition-colors pb-1 border-b border-brand-blue">formspree</a></span>
             </div>
         </div>
     </footer>
@@ -541,7 +796,7 @@
         // CV Modal Logic
         const modal = document.getElementById('cv-modal');
         const modalContent = document.getElementById('cv-modal-content');
-        
+
         function openCV() {
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -570,13 +825,14 @@
 
         // Security / Inspection Prevention Script
         document.addEventListener('contextmenu', event => event.preventDefault());
-        document.onkeydown = function(e) {
-            if(e.keyCode == 123) { return false; } // F12
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
-            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) { return false; } // F12
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
         };
     </script>
 </body>
+
 </html>
